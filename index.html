@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="rtfmApp">
+	<head>
+	</head>
+	<body>
+		<!-- Add your site or application content here -->
+		<div class="container" ng-view>
+		</div>
+		
+		<!-- Environment -->
+		<script src="app/env.js"></script>
+		<!-- Scripts -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+		<script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.js"></script>
+		<!-- JS Files -->
+		<script src="app/js/app.js"></script>
+		<!-- Controllers -->
+		<script src="app/js/login/loginCtrl.js"></script>
+		<script src="app/js/threads/ThreadsCtrl.js"></script>
+
+		<!-- Services -->
+		<script src="app/js/EnvironmentService.js"></script>
+		<script src="app/js/threads/ThreadService.js"></script>
+
+	</body>
+</html>

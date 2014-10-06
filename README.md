@@ -41,7 +41,7 @@ window.env = {
 };
 ```
 
-Feel free to use my ```rtfm-demo``` firebase, or create you own at [firebase.com](https://firebase.com). If you use
+<!-- Feel free to use my ```rtfm-demo``` firebase, or create you own at [firebase.com](https://firebase.com). If you use
 my firebase, please change the base to reflect your name rather than 'chris'. For example you could use
 ```https://rtfm-demo.firebaseio.com/supermario```. All this will do is nest your firebase data under ```supermario``` so
 that your data doesn't mix with the rest of the group's.
@@ -60,7 +60,7 @@ JS files load.
 <!-- end scripts -->
 ```
 
-3. Create an EnvironmentService to make your environment variables injectable into any Angular module.
+<!-- 3. Create an EnvironmentService to make your environment variables injectable into any Angular module.
 ```
 angular.module('rtfmApp')
   .service('EnvironmentService', function EnvironmentService($window) {
@@ -76,11 +76,11 @@ angular.module('rtfmApp')
 read out ```{{ env }}}``` in your ```login.html``` view to confirm that your environment variables are injecting
 correctly. You should see your ```window.env``` object logged out onto your login view.
 
-5. Add ```app/env.js``` to your
+5. Add ```app/env.js``` to your --> -->
 
 ## Step 4: Create a Login Form
 
-1. Open up ```login.html``` and create a text input bound to ```$scope.username``` and a button that calls
+<!-- 1. Open up ```login.html``` and create a text input bound to ```$scope.username``` and a button that calls
 ```logMeIn(username)``` when clicked.
 
 ```
@@ -89,9 +89,9 @@ correctly. You should see your ```window.env``` object logged out onto your logi
 <div>
     <input type="text" ng-model="username"/>
     <button ng-click="logMeIn(username)">Log In</button>
-</div>
+</div> -->
 ```
-
+<!-- 
 2. Create the ```logMeIn``` function in your ```LoginCtrl```. Have it ```alert``` the username for now.
 3. Create a function in ```EnvironmentService``` called ```saveUsername``` that accepts a username and saves it to
 local storage using ```$window.localStorage.setItem('username', username);```.
@@ -100,11 +100,11 @@ local storage using ```$window.localStorage.setItem('username', username);```.
 5. Inject ```$location``` into ```LoginCtrl``` and use it to forward the user to the ```threads``` state after login (which is /threads as the URL, hint, look up how to use $location to redirect to a different URL).
 6. Create a ```threads.html``` view and a ```ThreadsCtrl``` controller in the appropriate folder. Add the new view and
 controller to the ```threads``` state in ```app.js```.
-7. Test your login and make sure that it forwards you to the stubbed threads view.
+7. Test your login and make sure that it forwards you to the stubbed threads view. -->
 
 
 ## Step 5: Protect our Routes
-A problem we're going to run into as we're setting up our routing is sometimes we only want certain authenticated users to see certain routes. What we're going to do in this step is to secure our routes so only those people who we want to see certain routes will be able to. 
+<!-- A problem we're going to run into as we're setting up our routing is sometimes we only want certain authenticated users to see certain routes. What we're going to do in this step is to secure our routes so only those people who we want to see certain routes will be able to. 
 
 1. Head over to your app.js file and under your .config block, add a new .run block. This .run block will be the first thing that Angular runs before your app starts to be initialized. 
 2. Pass the .run function a callback that accepts three parameters, ```$rootScope```, ```$location```, and ```EnvironmentService```. $rootScope is exactly like ```$scope```, but it's global in the sense that anywhere in your application you can get properties that are on ```$rootScope```. $location allows us to redirect to different locations if we need to. EnvironmentService is where we're going to check if our user is Authenticated.
@@ -114,12 +114,12 @@ A problem we're going to run into as we're setting up our routing is sometimes w
     //callback
   })
 ```
-is how you tell angular to listen for certain events. So in side your .run block, tell angular to listen for the '$routeChangeStart' event and pass it a callback function with a 'event', 'next', and 'current' parameter. As you can imagine, 'event' is the event that's happening, 'next' is the route the application is going to, and 'current' is the current route the application is on.
-4. Inside your callback, check to see if ```EnvironmentService.getUserName()''' returns a truthy value, if it doesn't that means the user hasn't been created - which means we need to redirect the user to the login page IE $location.path('/login'). If it does, set a property on $rootScope (for now) of username with the value being what getUserName returned.
+is how you tell angular to listen for certain events. So in side your .run block, tell angular to listen for the '$routeChangeStart' event and pass it a callback function with a 'event', 'next', and 'current' parameter. As you can imagine, 'event' is the event that's happening, 'next' is the route the application is going to, and 'current' is the current route the application is on. -->
+<!-- 4. Inside your callback, check to see if ```EnvironmentService.getUserName()''' returns a truthy value, if it doesn't that means the user hasn't been created - which means we need to redirect the user to the login page IE $location.path('/login'). If it does, set a property on $rootScope (for now) of username with the value being what getUserName returned. -->
 
 ## Step 4: Create a Thread Service and Use Firebase Refs
 
-1. Create a ThreadService and put it the appropriate folder.
+<!-- 1. Create a ThreadService and put it the appropriate folder.
 2. Create methods named ```getThreads``` and ```getThread``` to generate AngularFire references to all threads and any
 individual thread. You'll need to inject ```EnvironmentService``` to get your Firebase url and you'll need to inject
 ```$firebase``` to generate Firebase references (heretofore referred to as "refs").
@@ -192,7 +192,7 @@ thread.title = "This is a new thread";
 thread.$save();
 ```
 
-Notice that we you could set the object property ```thread.title``` just as you would any JS object.
+Notice that we you could set the object property ```thread.title``` just as you would any JS object. -->
 
 ### Step 5: Set up Threads view
 
